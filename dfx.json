@@ -1,0 +1,47 @@
+{
+  "canisters": {
+    "blazedfinity": {
+      "main": "src/blazedfinity/main.mo",
+      "type": "motoko"
+    },
+    "profile": {
+      "main": "src/profile/main.mo",
+      "type": "motoko"
+    },
+    "profiles": {
+      "main": "src/profiles/profile.mo",
+      "type": "motoko"
+    },
+    "jobs": {
+      "main": "src/jobs/job.mo",
+      "type": "motoko"
+    },
+    "blazedfinity_assets": {
+      "dependencies": [
+        "blazedfinity"
+      ],
+      "frontend": {
+        "entrypoint": "src/blazedfinity_assets/src/index.html"
+      },
+      "source": [
+        "src/blazedfinity_assets/assets",
+        "dist/blazedfinity_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.10.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

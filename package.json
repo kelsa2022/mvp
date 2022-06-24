@@ -1,0 +1,62 @@
+{
+  "name": "blazedfinity_assets",
+  "version": "0.1.0",
+  "description": "Internet Computer starter application",
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "prebuild": "npm run copy:types",
+    "start": "webpack serve --mode development --env development",
+    "prestart": "npm run copy:types",
+    "copy:types": "rsync -avr .dfx/$(echo ${DFX_NETWORK:-'**'})/canisters/** --exclude='assets/' --exclude='idl/' --exclude='*.wasm' --exclude='*.most' --delete src/declarations"
+  },
+  "devDependencies": {
+    "@dfinity/agent": "^0.11.1",
+    "@dfinity/candid": "^0.11.1",
+    "@dfinity/principal": "^0.11.1",
+    "assert": "2.0.0",
+    "buffer": "6.0.3",
+    "copy-webpack-plugin": "^9.0.1",
+    "events": "3.3.0",
+    "html-webpack-plugin": "5.5.0",
+    "process": "0.11.10",
+    "stream-browserify": "3.0.0",
+    "terser-webpack-plugin": "5.2.5",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "util": "0.12.4",
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "engines": {
+    "node": "^12 || ^14 || ^16 || ^18"
+  },
+  "browserslist": [
+    "last 2 chrome version",
+    "last 2 firefox version",
+    "last 2 safari version",
+    "last 2 edge version"
+  ],
+  "dependencies": {
+    "@dfinity/identity": "^0.11.2",
+    "@pathofdev/react-tag-input": "^1.0.7",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "dotenv-webpack": "^7.1.0",
+    "ethers": "^5.6.8",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-hook-form": "^7.32.1",
+    "react-router-dom": "^6.3.0",
+    "react-select": "^5.3.2",
+    "react-slick": "^0.29.0",
+    "react-tag-input": "^6.8.0",
+    "react-tagsinput": "^3.19.0"
+  }
+}
